@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Создание пользователя</h1>
+    <h1>Создание смены</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -10,7 +10,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('user_index') }}">Назад к списку</a>
+            <a href="{{ path('workingshift_index') }}">Назад к списку</a>
         </li>
     </ul>
 {% endblock %}

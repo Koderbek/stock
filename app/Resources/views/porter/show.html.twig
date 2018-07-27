@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Грузчики</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ porter.id }}</td>
+            </tr>
+            <tr>
+                <th>Имя</th>
+                <td>{{ porter.name }}</td>
+            </tr>
+            <tr>
+                <th>Фамилия</th>
+                <td>{{ porter.surname }}</td>
+            </tr>
+            <tr>
+                <th>Возраст</th>
+                <td>{{ porter.age }}</td>
+            </tr>
+            <tr>
+                <th>Общий вес</th>
+                <td>{{ porter.totalWeight }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('porter_index') }}">Назад к списку</a>
+        </li>
+        <li>
+            <a href="{{ path('porter_edit', { 'id': porter.id }) }}">Редактировать</a>
+        </li>
+        <li>
+            <a href="{{ path('porter_delete', { 'id': porter.id }) }}">Удалить</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Товар</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Категория</th>
+                <td>{{ product.category }}</td>
+            </tr>
+            <tr>
+                <th>Вес</th>
+                <td>{{ product.weight }}</td>
+            </tr>
+            <tr>
+                <th>Цена</th>
+                <td>{{ product.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('product_index') }}">Назад к списку</a>
+        </li>
+        <li>
+            <a href="{{ path('product_edit', { 'id': product.id }) }}">Редактировать</a>
+        </li>
+        <li>
+            <a href="{{ path('product_delete', { 'id': product.id }) }}">Удалить</a>
+        </li>
+    </ul>
+{% endblock %}

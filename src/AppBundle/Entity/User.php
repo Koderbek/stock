@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity()
  * @ORM\Table(name="users")
  */
-abstract class User implements UserInterface
+class User implements UserInterface
 {
     /**
      * @var integer
@@ -212,4 +212,5 @@ abstract class User implements UserInterface
     {
         return (string)$this->getName() . ' ' . $this->getSurname();
     }
+
 }
