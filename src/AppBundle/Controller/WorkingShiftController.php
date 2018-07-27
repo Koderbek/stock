@@ -98,7 +98,7 @@ class WorkingShiftController extends Controller
      * Deletes a workingShift entity.
      *
      * @Route("/delete/{id}", name="workingshift_delete")
-     * @Method("DELETE")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, WorkingShift $workingShift)
     {

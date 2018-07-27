@@ -16,7 +16,7 @@
         {% for workingShift in workingShifts %}
             <tr>
                 <td><a href="{{ path('workingshift_show', { 'id': workingShift.id }) }}">{{ workingShift.id }}</a></td>
-                <td>{% if workingShift.date %}{{ workingShift.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if workingShift.date %}{{ workingShift.date|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ workingShift.count }}</td>
                 <td>
                     <ul>

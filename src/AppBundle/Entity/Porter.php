@@ -17,6 +17,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Porter
 {
+    const DEFAULT_WEIGHT = 0;
+
     /**
      * @var integer
      * @ORM\Column(type="integer")
@@ -44,16 +46,13 @@ class Porter
     /**
      * @var integer
      * @ORM\Column(type="integer")
-     *
-     * @Assert\NotBlank(message="Заполните поле")
-     */
-    protected $age;
-
-    /**
-     * @var integer
-     * @ORM\Column(type="integer")
      */
     protected $totalWeight;
+
+    public function __construct()
+    {
+        $this->setTotalWeight(Porter::DEFAULT_WEIGHT);
+    }
 
     /**
      * @return int

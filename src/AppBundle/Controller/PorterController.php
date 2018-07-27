@@ -98,7 +98,7 @@ class PorterController extends Controller
      * Deletes a porter entity.
      *
      * @Route("/delete/{id}", name="porter_delete")
-     * @Method("DELETE")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, Porter $porter)
     {

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +14,11 @@ class WorkingShiftType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('count')->add('porter')->add('product');
+        $builder
+            ->add('date', DateType::class, ['label'=>'Дата', 'required' => false])
+            ->add('count',null, ['label'=>'Количество', 'required' => false])
+            ->add('porter',null, ['label'=>'Грузчик', 'required' => false])
+            ->add('product', null, ['label'=>'Товар', 'required' => false]);
     }/**
      * {@inheritdoc}
      */

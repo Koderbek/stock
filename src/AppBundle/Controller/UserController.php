@@ -98,7 +98,7 @@ class UserController extends Controller
      * Deletes a user entity.
      *
      * @Route("/delete/{id}", name="user_delete")
-     * @Method("DELETE")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, User $user)
     {

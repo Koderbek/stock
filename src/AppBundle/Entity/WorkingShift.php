@@ -27,11 +27,11 @@ class WorkingShift
     protected $id;
 
     /**
-     * @var \DateTime
-     * @ORM\Column(type="datetime")
+     * @var integer
+     * @ORM\Column(type="date")
      *
      * @Assert\NotBlank(message="Заполните поле")
-     * @Assert\DateTime(message="Ошибка формата")
+     * @Assert\Date(message="Ошибка формата")
      */
     protected $date;
 
@@ -78,7 +78,7 @@ class WorkingShift
     }
 
     /**
-     * @return \DateTime
+     * @return date
      */
     public function getDate()
     {
@@ -86,7 +86,7 @@ class WorkingShift
     }
 
     /**
-     * @param \DateTime $date
+     * @param date $date
      */
     public function setDate($date)
     {
