@@ -15,8 +15,7 @@ class PorterType extends AbstractType
     {
         $builder
             ->add('name', null, ['label'=>'Имя', 'required' => false])
-            ->add('surname', null, ['label'=>'Фамилия', 'required' => false])
-            ->add('totalWeight', null, ['label'=>'Общий вес', 'required' => false]);
+            ->add('surname', null, ['label'=>'Фамилия', 'required' => false]);
     }/**
      * {@inheritdoc}
      */

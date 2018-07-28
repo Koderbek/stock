@@ -14,13 +14,15 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('name', null, ['label'=>'Имя', 'required' => false])
+            ->add('surname', null, ['label'=>'Фамилия', 'required' => false])
             ->add('email', null, ['required' => false])
             ->add('role', null, ['label'=>'Роль', 'required' => false])
-            ->add('password', null, ['label'=>'Пароль', 'required' => false])
             ->add('salt')
-            ->add('name', null, ['label'=>'Имя', 'required' => false])
-            ->add('surname', null, ['label'=>'Фамилия', 'required' => false]);
-    }/**
+            ->add('password', null, ['label'=>'Пароль', 'required' => false]);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -37,6 +39,4 @@ class UserType extends AbstractType
     {
         return 'appbundle_user';
     }
-
-
 }
