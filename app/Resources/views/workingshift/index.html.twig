@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="background-color: #C9C9C9">
     <h1>Список рабочих смен</h1>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -38,4 +39,5 @@
             <a href="{{ path('workingshift_new') }}">Создать смену</a>
         </li>
     </ul>
+</div>
 {% endblock %}

@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="background-color: #C9C9C9">
     <h1>Редактирование товара</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" value="Обновить" />
     {{ form_end(edit_form) }}
 
     <ul>
@@ -13,4 +14,5 @@
             <a href="{{ path('product_index') }}">Назад к списку</a>
         </li>
     </ul>
+</div>
 {% endblock %}

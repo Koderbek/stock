@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="background-color: #C9C9C9">
     <h1>Смена</h1>
 
-    <table>
+    <table class="table">
         <tbody>
             <tr>
                 <th>ID</th>
@@ -31,4 +32,5 @@
             <a href="{{ path('workingshift_delete', { 'id': workingShift.id }) }}">Удалить</a>
         </li>
     </ul>
+</div>
 {% endblock %}

@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="background-color: #C9C9C9">
     <h1>Список грузчиков</h1>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -40,4 +41,5 @@
             <a href="{{ path('porter_new') }}">Создать грузчика</a>
         </li>
     </ul>
+</div>
 {% endblock %}

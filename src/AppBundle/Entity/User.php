@@ -59,8 +59,6 @@ class User implements UserInterface
     /**
      * @var string
      * @ORM\Column(type="string")
-     *
-     * @Assert\NotBlank(message="Заполните поле")
      */
     protected $salt;
 

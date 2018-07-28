@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container" style="background-color: #C9C9C9">
     <h1>Создание пользователя</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Создать" />
     {{ form_end(form) }}
 
     <ul>
@@ -13,4 +14,5 @@
             <a href="{{ path('user_index') }}">Назад к списку</a>
         </li>
     </ul>
+</div>
 {% endblock %}
