@@ -136,6 +136,6 @@ class Porter
 
     public function __toString()
     {
-        return $this->getName().', '.', '.$this->getSurname();
+        return $this->getName() . ' ' .$this->getSurname();
     }
 }

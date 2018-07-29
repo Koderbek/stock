@@ -9,17 +9,26 @@
             <tr>
                 <th>ID</th>
                 <th>Дата</th>
+                <th>Грузчик</th>
+                <th>Товар</th>
                 <th>Количество</th>
-                <th>Действия</th>
+                {% if is_granted('ROLE_USER') %}
+                    <th>Действия</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
         {% for workingShift in workingShifts %}
             <tr>
-                <td><a href="{{ path('workingshift_show', { 'id': workingShift.id }) }}">{{ workingShift.id }}</a></td>
+                <td>{{ workingShift.id }}</td>
                 <td>{% if workingShift.date %}{{ workingShift.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ workingShift.porter }}</td>
+                <td>{{ workingShift.product }}</td>
                 <td>{{ workingShift.count }}</td>
+
+                {% if is_granted('ROLE_USER') %}
                 <td>
+
                     <ul>
                         <li>
                             <a href="{{ path('workingshift_show', { 'id': workingShift.id }) }}">Показать</a>
@@ -29,6 +38,7 @@
                         </li>
                     </ul>
                 </td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
@@ -36,7 +46,11 @@
 
     <ul>
         <li>
-            <a href="{{ path('workingshift_new') }}">Создать смену</a>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('workingshift_new') }}">Создать смену</a>
+            {% elseif is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('workingshift_new') }}">Печатать отчет</a>
+            {% endif %}
         </li>
     </ul>
 </div>

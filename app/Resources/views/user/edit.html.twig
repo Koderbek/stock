@@ -9,10 +9,12 @@
         <input type="submit" value="Обновить" />
     {{ form_end(edit_form) }}
 
+    {% if is_granted('ROLE_ADMIN') %}
     <ul>
         <li>
             <a href="{{ path('user_index') }}">Назад к списку</a>
         </li>
     </ul>
+    {% endif %}
 </div>
 {% endblock %}

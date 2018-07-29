@@ -17,7 +17,7 @@
         <tbody>
         {% for porter in porters %}
             <tr>
-                <td><a href="{{ path('porter_show', { 'id': porter.id }) }}">{{ porter.id }}</a></td>
+                <td>{{ porter.id }}</td>
                 <td>{{ porter.name }}</td>
                 <td>{{ porter.surname }}</td>
                 <td>{{ porter.totalWeight }}</td>

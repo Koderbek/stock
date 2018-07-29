@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,13 +21,13 @@ class UserType extends AbstractType
             ->add('email', null, ['required' => false])
             ->add('role', ChoiceType::class, [
                 'choices'  => [
-                    'USER' => 'USER',
-                    'ADMIN' => 'ADMIN',
+                    'USER' => 'ROLE_USER',
+                    'ADMIN' => 'ROLE_ADMIN',
                 ],
                 'label'=>'Роль',
                 'required' => false]
             )
-            ->add('password', null, ['label'=>'Пароль', 'required' => false]);
+            ->add('password', PasswordType::class, ['label'=>'Пароль', 'required' => false]);
     }
 
     /**
