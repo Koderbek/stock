@@ -22,24 +22,14 @@
                 <td>{{ porter.surname }}</td>
                 <td>{{ porter.totalWeight }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('porter_show', { 'id': porter.id }) }}">Показать</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('porter_edit', { 'id': porter.id }) }}">Редактировать</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-success" href="{{ path('porter_show', { 'id': porter.id }) }}">Показать</a>
+                    <a class="btn btn-success" href="{{ path('porter_edit', { 'id': porter.id }) }}">Редактировать</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('porter_new') }}">Создать грузчика</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('porter_new') }}">Создать грузчика</a>
 </div>
 {% endblock %}

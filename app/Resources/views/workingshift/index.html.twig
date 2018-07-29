@@ -28,30 +28,18 @@
 
                 {% if is_granted('ROLE_USER') %}
                 <td>
-
-                    <ul>
-                        <li>
-                            <a href="{{ path('workingshift_show', { 'id': workingShift.id }) }}">Показать</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('workingshift_edit', { 'id': workingShift.id }) }}">Редактировать</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-success" href="{{ path('workingshift_show', { 'id': workingShift.id }) }}">Показать</a>
+                    <a class="btn btn-success" href="{{ path('workingshift_edit', { 'id': workingShift.id }) }}">Редактировать</a>
                 </td>
                 {% endif %}
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('workingshift_new') }}">Создать смену</a>
-            {% elseif is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('workingshift_new') }}">Печатать отчет</a>
-            {% endif %}
-        </li>
-    </ul>
+        {% if is_granted('ROLE_USER') %}
+            <a class="btn btn-success" href="{{ path('workingshift_new') }}">Создать смену</a>
+        {% elseif is_granted('ROLE_ADMIN') %}
+            <a class="btn btn-success" href="{{ path('workingshift_new') }}">Печатать отчет</a>
+        {% endif %}
 </div>
 {% endblock %}

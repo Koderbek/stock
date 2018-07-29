@@ -24,24 +24,14 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.role }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">Показать</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">Редактировать</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-success" href="{{ path('user_show', { 'id': user.id }) }}">Показать</a>
+                    <a class="btn btn-success" href="{{ path('user_edit', { 'id': user.id }) }}">Редактировать</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">Создать пользователя</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('user_new') }}">Создать пользователя</a>
 </div>
 {% endblock %}

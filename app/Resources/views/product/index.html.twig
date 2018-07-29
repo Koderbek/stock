@@ -22,24 +22,14 @@
                 <td>{{ product.weight }}</td>
                 <td>{{ product.price }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('product_show', { 'id': product.id }) }}">Показать</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('product_edit', { 'id': product.id }) }}">Редактировать</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-success" href="{{ path('product_show', { 'id': product.id }) }}">Показать</a>
+                    <a class="btn btn-success" href="{{ path('product_edit', { 'id': product.id }) }}">Редактировать</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('product_new') }}">Создать товар</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('product_new') }}">Создать товар</a>
 </div>
 {% endblock %}

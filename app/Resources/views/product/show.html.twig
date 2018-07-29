@@ -25,16 +25,8 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('product_index') }}">Назад к списку</a>
-        </li>
-        <li>
-            <a href="{{ path('product_edit', { 'id': product.id }) }}">Редактировать</a>
-        </li>
-        <li>
-            <a href="{{ path('product_delete', { 'id': product.id }) }}">Удалить</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('product_index') }}">Назад к списку</a>
+    <a class="btn btn-success" href="{{ path('product_edit', { 'id': product.id }) }}">Редактировать</a>
+    <a class="btn btn-success" href="{{ path('product_delete', { 'id': product.id }) }}">Удалить</a>
 </div>
 {% endblock %}

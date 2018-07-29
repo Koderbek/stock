@@ -25,16 +25,8 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('porter_index') }}">Назад к списку</a>
-        </li>
-        <li>
-            <a href="{{ path('porter_edit', { 'id': porter.id }) }}">Редактировать</a>
-        </li>
-        <li>
-            <a href="{{ path('porter_delete', { 'id': porter.id }) }}">Удалить</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('porter_index') }}">Назад к списку</a>
+    <a class="btn btn-success" href="{{ path('porter_edit', { 'id': porter.id }) }}">Редактировать</a>
+    <a class="btn btn-success" href="{{ path('porter_delete', { 'id': porter.id }) }}">Удалить</a>
 </div>
 {% endblock %}

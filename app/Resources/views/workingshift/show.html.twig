@@ -21,16 +21,8 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('workingshift_index') }}">Назад к списку</a>
-        </li>
-        <li>
-            <a href="{{ path('workingshift_edit', { 'id': workingShift.id }) }}">Редактировать</a>
-        </li>
-        <li>
-            <a href="{{ path('workingshift_delete', { 'id': workingShift.id }) }}">Удалить</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('workingshift_index') }}">Назад к списку</a>
+    <a class="btn btn-success" href="{{ path('workingshift_edit', { 'id': workingShift.id }) }}">Редактировать</a>
+    <a class="btn btn-success" href="{{ path('workingshift_delete', { 'id': workingShift.id }) }}">Удалить</a>
 </div>
 {% endblock %}
