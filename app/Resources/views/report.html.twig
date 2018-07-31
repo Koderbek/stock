@@ -1,0 +1,26 @@
+<div class="container" style="background-color: #C9C9C9">
+    <h1>Отчет</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Дата</th>
+            <th>Грузчик</th>
+            <th>Товар</th>
+            <th>Количество</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for workingShift in workingShifts %}
+            <tr>
+                <td>{{ workingShift.id }}</td>
+                <td>{% if workingShift.date %}{{ workingShift.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ workingShift.porter }}</td>
+                <td>{{ workingShift.product }}</td>
+                <td>{{ workingShift.count }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

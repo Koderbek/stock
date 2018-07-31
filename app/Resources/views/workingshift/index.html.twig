@@ -39,7 +39,7 @@
         {% if is_granted('ROLE_USER') %}
             <a class="btn btn-success" href="{{ path('workingshift_new') }}">Создать смену</a>
         {% elseif is_granted('ROLE_ADMIN') %}
-            <a class="btn btn-success" href="{{ path('workingshift_new') }}">Печатать отчет</a>
+            <a class="btn btn-success" href="{{ path('print') }}">Печатать отчет</a>
         {% endif %}
 </div>
 {% endblock %}
