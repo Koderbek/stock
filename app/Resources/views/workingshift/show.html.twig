@@ -15,8 +15,20 @@
                 <td>{% if workingShift.date %}{{ workingShift.date|date('Y-m-d') }}{% endif %}</td>
             </tr>
             <tr>
+                <th>Грузчик</th>
+                <td>{{ workingShift.porter }}</td>
+            </tr>
+            <tr>
+                <th>Товар</th>
+                <td>{{ workingShift.product }}</td>
+            </tr>
+            <tr>
                 <th>Количество</th>
                 <td>{{ workingShift.count }}</td>
+            </tr>
+            <tr>
+                <th>Вес</th>
+                <td>{{ workingShift.weight }}</td>
             </tr>
         </tbody>
     </table>

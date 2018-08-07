@@ -17,8 +17,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Porter
 {
-    const DEFAULT_WEIGHT = 0;
-
     /**
      * @var integer
      * @ORM\Column(type="integer")
@@ -51,7 +49,7 @@ class Porter
 
     public function __construct()
     {
-        $this->setTotalWeight(Porter::DEFAULT_WEIGHT);
+        $this->totalWeight = 0;
     }
 
     /**
@@ -134,8 +132,20 @@ class Porter
         $this->totalWeight = $totalWeight;
     }
 
+    /**
+     * @param $value
+     * @return $this
+     */
+    public function addTotalWeight($weight)
+    {
+        $this->totalWeight += $weight;
+
+        return $this;
+    }
+
     public function __toString()
     {
         return $this->getName() . ' ' .$this->getSurname();
     }
+
 }

@@ -55,10 +55,19 @@ class WorkingShift
      */
     protected $count;
 
+    /**
+     * @var integer
+     * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank(message="Заполните поле")
+     */
+    protected $weight;
+
     public function __construct()
     {
         $this->porter = new ArrayCollection();
         $this->product = new ArrayCollection();
+        $this->weight = 0;
     }
 
     /**
@@ -139,5 +148,21 @@ class WorkingShift
     public function setCount($count)
     {
         $this->count = $count;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param int $weight
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
     }
 }

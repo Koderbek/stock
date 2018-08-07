@@ -16,9 +16,9 @@ class WorkingShiftType extends AbstractType
     {
         $builder
             ->add('date', DateType::class, ['label'=>'Дата', 'required' => false])
-            ->add('count',null, ['label'=>'Количество', 'required' => false])
             ->add('porter',null, ['label'=>'Грузчик', 'required' => false])
-            ->add('product', null, ['label'=>'Товар', 'required' => false]);
+            ->add('product', null, ['label'=>'Товар', 'required' => false])
+            ->add('count',null, ['label'=>'Количество', 'required' => false]);
     }/**
      * {@inheritdoc}
      */

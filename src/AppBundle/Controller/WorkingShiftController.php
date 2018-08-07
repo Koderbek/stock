@@ -46,6 +46,30 @@ class WorkingShiftController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAll();
+
+            foreach ($products as $product){
+                if($product == $workingShift->getProduct()){
+                    $count = $workingShift->getCount();
+                    $weight = $product->getWeight();
+                    $workingShift->setWeight($count * $weight);
+                    $value = $workingShift->getWeight();
+
+                    break;
+                }
+            }
+
+            $porters = $this->getDoctrine()->getRepository('AppBundle:Porter')->findAll();
+
+            foreach ($porters as $porter){
+                if($porter == $workingShift->getPorter()){
+                    $porter->addTotalWeight($value);
+                    $em->persist($porter);
+                    break;
+                }
+            }
+
             $em->persist($workingShift);
             $em->flush();
 

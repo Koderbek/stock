@@ -12,6 +12,7 @@
                 <th>Грузчик</th>
                 <th>Товар</th>
                 <th>Количество</th>
+                <th>Вес</th>
                 {% if is_granted('ROLE_USER') %}
                     <th>Действия</th>
                 {% endif %}
@@ -25,6 +26,7 @@
                 <td>{{ workingShift.porter }}</td>
                 <td>{{ workingShift.product }}</td>
                 <td>{{ workingShift.count }}</td>
+                <td>{{ workingShift.weight }}</td>
 
                 {% if is_granted('ROLE_USER') %}
                 <td>
